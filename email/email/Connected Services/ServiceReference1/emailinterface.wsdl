@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://javatest/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="emailinterface" targetNamespace="http://javatest/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://javatest/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SendEmail" type="tns:SendEmail" />
+      <xs:element name="SendEmailResponse" type="tns:SendEmailResponse" />
+      <xs:element name="checkEmail" type="tns:checkEmail" />
+      <xs:element name="checkEmailResponse" type="tns:checkEmailResponse" />
+      <xs:complexType name="checkEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="url" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkEmailResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:string" />
+          <xs:element minOccurs="0" name="payload" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendEmailResponse">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SendEmailResponse">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkEmailResponse">
+    <wsdl:part name="parameters" element="tns:checkEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkEmail">
+    <wsdl:part name="parameters" element="tns:checkEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendEmail">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:portType name="emailinterface">
+    <wsdl:operation name="checkEmail">
+      <wsdl:input name="checkEmail" message="tns:checkEmail" />
+      <wsdl:output name="checkEmailResponse" message="tns:checkEmailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input name="SendEmail" message="tns:SendEmail" />
+      <wsdl:output name="SendEmailResponse" message="tns:SendEmailResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="emailinterfaceSoapBinding" type="tns:emailinterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkEmail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="checkEmail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkEmailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="SendEmail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendEmailResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="emailinterface">
+    <wsdl:port name="javatestPort" binding="tns:emailinterfaceSoapBinding">
+      <soap:address location="http://localhost:666/Webservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

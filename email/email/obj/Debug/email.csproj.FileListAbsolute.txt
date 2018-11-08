@@ -1,0 +1,10 @@
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.csprojResolveAssemblyReference.cache
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.Form1.resources
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.Properties.Resources.resources
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.csproj.GenerateResource.Cache
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.csproj.CoreCompileInputs.cache
+c:\users\frederick fan\source\repos\email\email\bin\Debug\email.exe.config
+c:\users\frederick fan\source\repos\email\email\bin\Debug\email.exe
+c:\users\frederick fan\source\repos\email\email\bin\Debug\email.pdb
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.exe
+c:\users\frederick fan\source\repos\email\email\obj\Debug\email.pdb
